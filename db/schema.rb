@@ -10,7 +10,45 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_25_164003) do
+ActiveRecord::Schema.define(version: 2018_07_25_183535) do
+
+  create_table "locations", force: :cascade do |t|
+    t.string "name"
+    t.integer "xcoord"
+    t.integer "ycoord"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_locations_on_user_id"
+  end
+
+  create_table "pet_breeds", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.integer "pet_category_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["pet_category_id"], name: "index_pet_breeds_on_pet_category_id"
+  end
+
+  create_table "pet_categories", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "pets", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.decimal "age"
+    t.integer "pet_breed_id"
+    t.integer "location_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["location_id"], name: "index_pets_on_location_id"
+    t.index ["pet_breed_id"], name: "index_pets_on_pet_breed_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
