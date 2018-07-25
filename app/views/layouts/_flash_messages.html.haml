@@ -1,0 +1,8 @@
+- flash.each do |key, value|
+  .message
+    .alert-message
+      = "#{key} - "
+      %a.close{:href => "#"} "#{current_user.sign_in_count} times"
+      %center
+        %strong= value
+
