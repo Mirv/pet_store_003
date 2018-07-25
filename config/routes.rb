@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
+  resources :pets
+  resources :locations
+  resources :pet_breeds
+  resources :pet_categories
   devise_for :users
-  root 'index#users'
+  root 'pets#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

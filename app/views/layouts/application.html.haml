@@ -9,5 +9,6 @@
 
 .body
   = render 'layouts/menu'
-  = render 'layouts/flash_messages' if !flash.empty?
+  // TODO - this needs to be fixed so no crashy the server
+  // = render 'layouts/flash_messages' if flash.present?  
   = yield 
