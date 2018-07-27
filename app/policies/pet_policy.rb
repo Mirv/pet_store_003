@@ -1,10 +1,18 @@
 class PetPolicy < ApplicationPolicy
   def index?
-    false
+    true
   end
 
   def show?
-    false
+    true
+  end
+  
+  def destroy?
+    user.admin # record.user_id == user.id || # for now just admin delete
+  end
+  
+  def update?
+    record.user_id == user.id
   end
   
   class Scope < Scope
