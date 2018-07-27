@@ -3,6 +3,8 @@ require 'test_helper'
 class PetsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @pet = pets(:one)
+    @user = users(:one)
+    sign_in @user
   end
 
   test "should get index" do

@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :pet_categories
   devise_for :users
   root 'pets#index'
+  # /assets/ico/favicon.ico
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
