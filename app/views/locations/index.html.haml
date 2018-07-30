@@ -17,10 +17,15 @@
         %td= location.name
         %td= location.xcoord
         %td= location.ycoord
-        %td= location.user
+        %td= location.user.email
         %td= link_to 'Show', location
-        %td= link_to 'Edit', edit_location_path(location)
-        %td= link_to 'Destroy', location, method: :delete, data: { confirm: 'Are you sure?' }
+        - if current_user
+          - if policy(location).admin?
+            %td= link_to 'Edit', edit_location_path(location)
+            %td= link_to 'Destroy', location, method: :delete, data: { confirm: 'Are you sure?' }
+          - else
+            - if policy(location).edit? 
+              %td= link_to 'Edit', edit_location_path(location)
 
 %br
 

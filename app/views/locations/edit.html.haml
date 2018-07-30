@@ -2,6 +2,7 @@
 
 = render 'form'
 
-= link_to 'Show', @location
-\|
+- if policy(@location).edit?  
+    = link_to 'Show', @location
+    \|
 = link_to 'Back', locations_path

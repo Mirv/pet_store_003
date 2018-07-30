@@ -8,8 +8,9 @@
   = @pet_breed.description
 %p
   %b Pet category:
-  = @pet_breed.pet_category
+  = @pet_breed.pet_category.name
 
-= link_to 'Edit', edit_pet_breed_path(@pet_breed)
-\|
+- if policy(@pet_breed).edit?  
+  = link_to 'Edit', edit_pet_breed_path(@pet_breed)
+  \|
 = link_to 'Back', pet_breeds_path

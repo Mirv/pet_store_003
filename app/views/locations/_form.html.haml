@@ -7,7 +7,7 @@
     = f.input :name
     = f.input :xcoord
     = f.input :ycoord
-    = f.association :user
+    = f.association :user, label_method: :email
 
   .form-actions
     = f.button :submit

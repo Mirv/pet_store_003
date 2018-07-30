@@ -1,4 +1,4 @@
-class PetPolicy < ApplicationPolicy
+class PetCategoryPolicy < ApplicationPolicy
   def index?
     true
   end
@@ -8,7 +8,7 @@ class PetPolicy < ApplicationPolicy
   end
   
   def destroy?
-    admin? # record.user_id == user.id || # for now just admin delete
+    admin? 
   end
   
   def edit?
@@ -17,7 +17,7 @@ class PetPolicy < ApplicationPolicy
   
   def update?
     if @user 
-      result = record.user_id == user.id || admin?
+      admin?
     else
       false
     end

@@ -6,7 +6,7 @@
   .form-inputs
     = f.input :name
     = f.input :description
-    = f.association :pet_category
+    = f.association :pet_category, label_method: :name
 
   .form-actions
     = f.button :submit

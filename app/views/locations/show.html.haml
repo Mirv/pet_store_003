@@ -11,8 +11,8 @@
   = @location.ycoord
 %p
   %b User:
-  = @location.user
-
-= link_to 'Edit', edit_location_path(@location)
-\|
+  = @location.user.email
+- if policy(@location).edit?  
+  = link_to 'Edit', edit_location_path(@location)
+  \|
 = link_to 'Back', locations_path

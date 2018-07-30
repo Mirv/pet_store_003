@@ -15,10 +15,15 @@
       %tr
         %td= pet_breed.name
         %td= pet_breed.description
-        %td= pet_breed.pet_category
+        %td= pet_breed.pet_category.name
         %td= link_to 'Show', pet_breed
-        %td= link_to 'Edit', edit_pet_breed_path(pet_breed)
-        %td= link_to 'Destroy', pet_breed, method: :delete, data: { confirm: 'Are you sure?' }
+        - if current_user
+          - if policy(pet_breed).admin?
+            %td= link_to 'Edit', edit_pet_breed_path(pet_breed)
+            %td= link_to 'Destroy', pet_breed, method: :delete, data: { confirm: 'Are you sure?' }
+          - else
+            - if policy(pet_breed).edit? 
+              %td= link_to 'Edit', edit_pet_breed_path(pet_breed)
 
 %br
 

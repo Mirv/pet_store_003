@@ -1,4 +1,4 @@
-class PetPolicy < ApplicationPolicy
+class PetBreedPolicy < ApplicationPolicy
   def index?
     true
   end
@@ -17,7 +17,7 @@ class PetPolicy < ApplicationPolicy
   
   def update?
     if @user 
-      result = record.user_id == user.id || admin?
+      admin?
     else
       false
     end
