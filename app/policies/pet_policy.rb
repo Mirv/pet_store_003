@@ -11,8 +11,22 @@ class PetPolicy < ApplicationPolicy
     user.admin # record.user_id == user.id || # for now just admin delete
   end
   
+  def edit?
+    # byebug
+    if @user 
+      # byebug
+      record.user_id == user.id
+    else
+      false
+    end
+  end
+  
   def update?
     record.user_id == user.id
+  end
+  
+  def admin?
+    user.admin
   end
   
   class Scope < Scope

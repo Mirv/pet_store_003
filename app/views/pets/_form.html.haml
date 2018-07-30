@@ -9,6 +9,8 @@
     = f.input :age
     = f.association :pet_breed
     = f.association :location
+    - if policy(@pet).admin?
+      = f.association :user, label_method: :email
 
   .form-actions
     = f.button :submit

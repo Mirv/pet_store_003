@@ -41,6 +41,7 @@ group :development, :test do
   gem 'guard-minitest'
   gem 'factory_bot'
   gem 'ffaker'
+  gem 'guard'
 end
 
 group :development do

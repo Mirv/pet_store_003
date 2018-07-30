@@ -12,3 +12,4 @@ two:
  
 admin:
  email: "admin@test.com"
+ admin: true

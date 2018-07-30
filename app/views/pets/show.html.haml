@@ -14,8 +14,11 @@
   = @pet.pet_breed
 %p
   %b Location:
-  = @pet.location
-
+  = @pet.location.name
+%p
+  %b Owner:
+  = @pet.user.email
+  
 = link_to 'Edit', edit_pet_path(@pet)
 \|
 = link_to 'Back', pets_path
