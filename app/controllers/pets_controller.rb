@@ -15,18 +15,22 @@ class PetsController < ApplicationController
 
   # GET /pets/new
   def new
+    authorize Pet
     @pet = Pet.new
   end
 
   # GET /pets/1/edit
   def edit
+    authorize @pet
   end
 
   # POST /pets
   # POST /pets.json
   def create
+    authorize Pet
     @pet = Pet.new(pet_params)
-
+    @pet.user_id = current_user.id
+    # byebug
     respond_to do |format|
       if @pet.save
         format.html { redirect_to @pet, notice: 'Pet was successfully created.' }
@@ -41,6 +45,7 @@ class PetsController < ApplicationController
   # PATCH/PUT /pets/1
   # PATCH/PUT /pets/1.json
   def update
+    authorize @pet
     respond_to do |format|
       if @pet.update(pet_params)
         format.html { redirect_to @pet, notice: 'Pet was successfully updated.' }
@@ -55,6 +60,7 @@ class PetsController < ApplicationController
   # DELETE /pets/1
   # DELETE /pets/1.json
   def destroy
+    authorize @pet
     @pet.destroy
     respond_to do |format|
       format.html { redirect_to pets_url, notice: 'Pet was successfully destroyed.' }
@@ -67,9 +73,14 @@ class PetsController < ApplicationController
     def set_pet
       @pet = Pet.find(params[:id])
     end
+    
+    def set_user
+      @user ||= current_user
+    end
+    
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pet_params
-      params.require(:pet).permit(:name, :description, :age, :pet_breed_id, :location_id)
+      params.require(:pet).permit(:name, :description, :age, :pet_breed_id, :location_id, :user_id)
     end
 end
