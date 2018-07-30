@@ -21,12 +21,14 @@
         %td= pet.pet_breed.name
         %td= pet.location.name
         %td= link_to 'Show', pet
-        - if policy(pet).edit?
-          %td= link_to 'Edit', edit_pet_path(pet)
-        // - if Pundit.policy(pet).edit?
-        // if policy(pet).edit?  works
-        // %td= link_to 'Destroy', pet, method: :delete, data: { confirm: 'Are you sure?' }
-
+        - if current_user
+          - if policy(pet).admin?
+            %td= link_to 'Edit', edit_pet_path(pet)
+            %td= link_to 'Destroy', pet, method: :delete, data: { confirm: 'Are you sure?' }
+          - else
+            - if policy(pet).edit? 
+              %td= link_to 'Edit', edit_pet_path(pet)
+            
 %br
 
 = link_to 'New Pet', new_pet_path

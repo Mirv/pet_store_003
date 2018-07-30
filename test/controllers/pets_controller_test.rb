@@ -41,6 +41,8 @@ class PetsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should destroy pet" do
+    @user = users(:admin)
+    sign_in @user
     assert_difference('Pet.count', -1) do
       delete pet_url(@pet)
     end

@@ -33,14 +33,9 @@ class PetPolicyTest < ActiveSupport::TestCase
   end
 
   test "destroy as admin" do
-    @user.admin = true
-    assert @policy.destroy?
+    @user = users(:admin)
+    assert Pundit.policy(@user, @pet).destroy?
   end
   
-  test "only admin see pet owner transfer button" do
-    refute @policy.admin?
-  
-    @admin = users(:admin)
-    assert Pundit.policy(@admin, @pet).admin?
-  end
+
 end

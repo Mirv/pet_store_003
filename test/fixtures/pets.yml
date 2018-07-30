@@ -6,6 +6,7 @@ one:
   age: 9.99
   pet_breed: one
   location: one
+  user: one
 
 two:
   name: MyString
@@ -13,3 +14,4 @@ two:
   age: 9.99
   pet_breed: two
   location: two
+  user: two

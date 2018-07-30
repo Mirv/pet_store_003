@@ -8,14 +8,12 @@ class PetPolicy < ApplicationPolicy
   end
   
   def destroy?
-    user.admin # record.user_id == user.id || # for now just admin delete
+    admin? # record.user_id == user.id || # for now just admin delete
   end
   
   def edit?
-    # byebug
     if @user 
-      # byebug
-      record.user_id == user.id
+      record.user_id == user.id 
     else
       false
     end
