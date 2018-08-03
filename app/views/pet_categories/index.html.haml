@@ -1,4 +1,4 @@
-%h1 Listing pet_categories
+%h1 Listing Pet Categories
 
 %table
   %thead
@@ -19,8 +19,9 @@
           - if policy(pet_category).admin?
             %td= link_to 'Edit', edit_pet_category_path(pet_category)
             %td= link_to 'Destroy', pet_category, method: :delete, data: { confirm: 'Are you sure?' }
-          - if policy(pet_category).edit? 
-            %td= link_to 'Edit', edit_pet_category_path(pet_category)
+          - else
+            - if policy(pet_category).edit? 
+              %td= link_to 'Edit', edit_pet_category_path(pet_category)
 
 %br
 

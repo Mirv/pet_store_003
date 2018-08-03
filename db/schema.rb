@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_27_182311) do
+ActiveRecord::Schema.define(version: 2018_07_31_115511) do
 
   create_table "locations", force: :cascade do |t|
     t.string "name"
@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(version: 2018_07_27_182311) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "status"
+    t.index ["status"], name: "index_locations_on_status"
     t.index ["user_id"], name: "index_locations_on_user_id"
   end
 
@@ -47,8 +49,10 @@ ActiveRecord::Schema.define(version: 2018_07_27_182311) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
+    t.integer "status"
     t.index ["location_id"], name: "index_pets_on_location_id"
     t.index ["pet_breed_id"], name: "index_pets_on_pet_breed_id"
+    t.index ["status"], name: "index_pets_on_status"
     t.index ["user_id"], name: "index_pets_on_user_id"
   end
 
