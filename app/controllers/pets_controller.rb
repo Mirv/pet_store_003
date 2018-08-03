@@ -5,6 +5,9 @@ class PetsController < ApplicationController
   # GET /pets.json
   def index
     @pets = Pet.all
+    puts "#{@pets.first}"
+    puts "#{@pets.first.name}"
+    # byebug
   end
 
   # GET /pets/1
