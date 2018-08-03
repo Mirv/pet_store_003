@@ -15,5 +15,7 @@
 /log/*
 !/log/.keep
 /tmp
-
+/public/assets
+/app/assets
+/lib/assets
 .env
