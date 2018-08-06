@@ -7,4 +7,11 @@ class Pet < ApplicationRecord
   belongs_to :pet_breed
   belongs_to :location
   belongs_to :user
+  
+  validates_presence_of :name
+  validates_presence_of :description
+  validates_presence_of :age
+  validates_presence_of :pet_breed
+  validates_presence_of :location_id
+  validates_presence_of :user_id
 end
