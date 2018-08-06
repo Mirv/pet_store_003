@@ -28,11 +28,13 @@ class PetPolicyTest < ActiveSupport::TestCase
   end
 
   def test_update
+    refute Pundit.policy(@user, @pet).admin?
     @pet.user_id = @user.id
     assert @policy.update?
   end
 
   test "destroy as admin" do
+    refute Pundit.policy(@user, @pet).admin?
     @user = users(:admin)
     assert Pundit.policy(@user, @pet).destroy?
   end
