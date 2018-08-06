@@ -14,4 +14,7 @@ class Pet < ApplicationRecord
   validates_presence_of :pet_breed
   validates_presence_of :location_id
   validates_presence_of :user_id
+  
+  scope :for_sale, -> { where('status < 4000') }
+  # scope :proponent,   ->(user){ where(user_id: user.id) }
 end
