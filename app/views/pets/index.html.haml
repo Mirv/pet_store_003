@@ -8,6 +8,7 @@
       %th Age
       %th Pet breed
       %th Location
+      %th Status
       %th
       %th
       %th
@@ -21,6 +22,7 @@
           %td= pet.age
           %td= pet.pet_breed.name
           %td= pet.location.name
+          %td= pet.status.titleize
           %td= link_to 'Show', pet
           - if current_user
             - if policy(pet).admin?

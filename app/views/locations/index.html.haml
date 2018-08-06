@@ -7,6 +7,7 @@
       %th Xcoord
       %th Ycoord
       %th User
+      %th Location
       %th
       %th
       %th
@@ -18,6 +19,7 @@
         %td= location.xcoord
         %td= location.ycoord
         %td= location.user.email
+        %td= location.status.titleize
         %td= link_to 'Show', location
         - if current_user
           - if policy(location).admin?

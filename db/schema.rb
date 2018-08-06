@@ -10,46 +10,46 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_31_115511) do
+ActiveRecord::Schema.define(version: 2018_08_06_164536) do
 
   create_table "locations", force: :cascade do |t|
     t.string "name"
-    t.integer "xcoord"
-    t.integer "ycoord"
-    t.integer "user_id"
+    t.decimal "xcoord", null: false
+    t.decimal "ycoord", null: false
+    t.integer "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "status"
+    t.integer "status", default: 0, null: false
     t.index ["status"], name: "index_locations_on_status"
     t.index ["user_id"], name: "index_locations_on_user_id"
   end
 
   create_table "pet_breeds", force: :cascade do |t|
-    t.string "name"
-    t.string "description"
-    t.integer "pet_category_id"
+    t.string "name", null: false
+    t.string "description", null: false
+    t.integer "pet_category_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["pet_category_id"], name: "index_pet_breeds_on_pet_category_id"
   end
 
   create_table "pet_categories", force: :cascade do |t|
-    t.string "name"
-    t.string "description"
+    t.string "name", null: false
+    t.string "description", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "pets", force: :cascade do |t|
-    t.string "name"
-    t.string "description"
-    t.decimal "age"
-    t.integer "pet_breed_id"
-    t.integer "location_id"
+    t.string "name", null: false
+    t.string "description", null: false
+    t.decimal "age", null: false
+    t.integer "pet_breed_id", null: false
+    t.integer "location_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id"
-    t.integer "status"
+    t.integer "user_id", null: false
+    t.integer "status", default: 500, null: false
     t.index ["location_id"], name: "index_pets_on_location_id"
     t.index ["pet_breed_id"], name: "index_pets_on_pet_breed_id"
     t.index ["status"], name: "index_pets_on_status"

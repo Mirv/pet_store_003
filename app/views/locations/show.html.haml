@@ -9,6 +9,11 @@
 %p
   %b Ycoord:
   = @location.ycoord
+  
+%p
+  %b Pet Status:
+  = @location.status.titleize   
+  
 %p
   %b User:
   = @location.user.email

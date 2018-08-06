@@ -5,6 +5,8 @@
 
   .form-inputs
     = f.input :name
+    = f.label "Pet Status"
+    = f.select :status, Pet.statuses.keys.map { |w| [w.humanize, w] }
     = f.input :description
     = f.input :age
     = f.association :pet_breed

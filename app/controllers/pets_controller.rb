@@ -4,9 +4,8 @@ class PetsController < ApplicationController
   # GET /pets
   # GET /pets.json
   def index
-    @pets = Pet.for_sale
-    puts "#{@pets.first}"
-    puts "#{@pets.first.name}"
+    @pets = Pet.all
+    # for_sale
     # byebug
   end
 

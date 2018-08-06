@@ -23,5 +23,10 @@ class LocationTest < ActiveSupport::TestCase
   test "invalid without user_id" do
     @location.user_id = ""
     refute @location.valid?
-  end  
+  end
+  
+  test "invalid without status" do
+    @location.status = nil
+    refute @location.valid?
+  end
 end
