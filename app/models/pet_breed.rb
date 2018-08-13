@@ -3,5 +3,5 @@ class PetBreed < ApplicationRecord
   
   validates_presence_of :name
   validates_presence_of :description
-  validates_presence_of :pet_breed_id
+  validates_presence_of :pet_category_id
 end

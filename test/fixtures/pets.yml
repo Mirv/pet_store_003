@@ -7,6 +7,7 @@ one:
   pet_breed: one
   location: one
   user: one
+  status: 200
 
 two:
   name: MyString
@@ -15,3 +16,4 @@ two:
   pet_breed: two
   location: two
   user: two
+  status: 5000

@@ -40,6 +40,7 @@ group :development, :test do
   gem 'guard' # NOTE: this is necessary in newer versions
   gem 'guard-minitest'
   gem 'factory_bot'
+  gem 'factory_bot_rails'
   gem 'ffaker'
 end
 

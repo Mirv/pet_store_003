@@ -8,7 +8,7 @@ class PetPolicy < ApplicationPolicy
   end
   
   def destroy?
-    admin? # record.user_id == user.id || # for now just admin delete
+    user.admin # record.user_id == user.id || # for now just admin delete
   end
   
   def edit?
@@ -17,15 +17,13 @@ class PetPolicy < ApplicationPolicy
   
   def update?
     if @user 
-      result = record.user_id == user.id || admin?
+      # byebug
+      result = record.user_id == user.id || user.admin
     else
       false
     end
   end
-  
-  def admin?
-    user.admin
-  end
+
   
   class Scope < Scope
     def resolve
