@@ -1,10 +1,16 @@
-%li
-  = link_to 'Locations', :locations
-%li
-  = link_to 'Pets', :pets
-%li
-  = link_to 'Categories', :pet_categories
-%li
-  = link_to 'Breeds', :pet_breeds
-%li
-  = render 'layouts/login'
+%li.sidebar-brand
+  %a.js-scroll-trigger{:href => "#page-top"} Pet Shop
+
+%li.sidebar-nav-item
+  %a.js-scroll-trigger{:href => :locations} Locations
+
+%li.sidebar-nav-item
+  %a.js-scroll-trigger{:href => :pets} Pets
+
+%li.sidebar-nav-item
+  %a.js-scroll-trigger{:href => :pet_categories} Categories
+
+%li.sidebar-nav-item
+  %a.js-scroll-trigger{:href => :pet_breeds} Breeds
+  
+= render 'layouts/login'
