@@ -1,4 +1,4 @@
-class AnonymousUser
+class AnonymousUser < User
   def id
     0
   end
@@ -9,5 +9,9 @@ class AnonymousUser
   
   def admin
     false
+  end
+  
+  def anonymous?
+    true
   end
 end

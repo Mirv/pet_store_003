@@ -1,8 +1,11 @@
-- if user_signed_in? 
-    = link_to "User: #{current_user ? current_user.email: ""}", user_session_path
+- if user_signed_in? && !current_user.anonymous?
+  %li.sidebar-nav-item
+    #{logged_in_email(current_user)}
     \-
-    = link_to 'Log Out', destroy_user_session_path, method: :delete, class: 'pure-menu-link'
+    = link_to 'Log Out', destroy_user_session_path, method: :delete
 - else
-    = link_to 'Log In', new_user_session_path, class: 'pure-menu-link'
+  %li.sidebar-nav-item
+    %a.js-scroll-trigger{:href => new_user_session_path} Log In
     \-
-    = link_to 'Sign up', new_user_registration_path, class: 'pure-menu-link'
+    %a.js-scroll-trigger{:href => new_user_registration_path} Sign up
+
