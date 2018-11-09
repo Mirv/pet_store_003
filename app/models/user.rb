@@ -5,4 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
          has_many :location
          has_many :pets
+         
+  def anonymous?
+    false
+  end
 end

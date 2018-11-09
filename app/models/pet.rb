@@ -18,9 +18,9 @@ class Pet < ApplicationRecord
   validates_presence_of :status
   
   # allow for different sale types with this range, exlude sold from range
-  scope :for_sale, -> { where(status:  (:published)...(:sold)) }  # ... is exclusive end
-  scope :admin_off, -> { where(status:  (:removed)..(:banned)) }  # .. is inclusive
-  scope :ordering, -> { where(status:  (:payment_pending)..(:fulfilling_processing)) }  # .. is inclusive
+  scope :for_sale, -> { where(status: (:published)...(:sold)) }  # '...' exclusive end
+  scope :admin_off, -> { where(status:(:removed)..(:banned)) }  # .. is inclusive
+  scope :ordering, -> { where(status: (:payment_pending)..(:fulfilling_processing))}
 
 
 end
