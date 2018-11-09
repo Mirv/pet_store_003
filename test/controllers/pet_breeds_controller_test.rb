@@ -2,8 +2,8 @@ require 'test_helper'
 
 class PetBreedsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @pet_breed = pet_breeds(:one)
-    @user = users(:one)
+    @pet_breed = FactoryBot.create(:pet_breed)
+    @user = FactoryBot.build(:user)
     sign_in @user
   end
 

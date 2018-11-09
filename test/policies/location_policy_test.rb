@@ -2,9 +2,9 @@ require 'test_helper'
 
 class LocationPolicyTest < ActiveSupport::TestCase
   def setup
-    @user = users(:one)
+    @user = FactoryBot.create(:user)
     sign_in @user
-    @location = locations(:one)
+    @location = FactoryBot.create(:location)
     @policy = Pundit.policy(@user, @location)
   end
   
@@ -28,12 +28,12 @@ class LocationPolicyTest < ActiveSupport::TestCase
   end
 
   def test_update
-    @user = users(:admin)
+    @user = FactoryBot.create(:admin)
     assert Pundit.policy(@user, @location).admin?
   end
 
   test "destroy as admin" do
-    @user = users(:admin)
+    @user = FactoryBot.create(:admin)
     assert Pundit.policy(@user, @location).destroy?
   end
 end

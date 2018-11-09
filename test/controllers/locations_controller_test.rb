@@ -2,8 +2,8 @@ require 'test_helper'
 
 class LocationsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @location = locations(:one)
-    @user = users(:one)
+    @location = FactoryBot.build(:location)
+    @user = FactoryBot.build(:user)
     sign_in @user
   end
 
@@ -19,7 +19,7 @@ class LocationsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create location" do
     assert_difference('Location.count') do
-      post locations_url, params: { location: { name: @location.name, user_id: @location.user_id, xcoord: @location.xcoord, ycoord: @location.ycoord } }
+      post locations_url, params: { location: { name: @location.name, user_id: @location.user_id, xcoord: @location.xcoord, ycoord: @location.ycoord, status: @location.status } }
     end
 
     assert_redirected_to location_url(Location.last)

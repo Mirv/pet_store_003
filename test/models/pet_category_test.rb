@@ -2,7 +2,7 @@ require 'test_helper'
 
 class PetCategoryTest < ActiveSupport::TestCase
   setup do
-    @category = pet_categories(:one)
+    @category = FactoryBot.create(:pet_category)
   end
   
   test "invalid without name" do

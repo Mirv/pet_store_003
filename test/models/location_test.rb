@@ -2,7 +2,7 @@ require 'test_helper'
 
 class LocationTest < ActiveSupport::TestCase
   setup do
-    @location = locations(:one)
+    @location = FactoryBot.create(:location)
   end
   
   test "invalid without name" do

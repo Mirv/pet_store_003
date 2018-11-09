@@ -69,7 +69,7 @@ class PetTest < ActiveSupport::TestCase
   end
   
   # strategy is check all valid, not boundaries
-  test "pet for ording" do
+  test "pet for ordering" do
     payment_pending = create(:pet, status: :payment_pending)
     fulfilling_processing = create(:pet, status: :fulfilling_processing)
     ordering = Pet.ordering

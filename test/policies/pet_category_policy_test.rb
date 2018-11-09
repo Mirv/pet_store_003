@@ -2,9 +2,9 @@ require 'test_helper'
 
 class PetCategoryPolicyTest < ActiveSupport::TestCase
   def setup
-    @user = users(:one)
+    @user = FactoryBot.create(:user)
     sign_in @user
-    @pet_category = pet_breeds(:one)
+    @pet_category = FactoryBot.create(:pet_category)
     @policy = Pundit.policy(@user, @pet_category) # can't use this on Pet versus @pet_category
   end
   
@@ -29,13 +29,13 @@ class PetCategoryPolicyTest < ActiveSupport::TestCase
 
   def test_update
     refute Pundit.policy(@user, @pet_category).admin?
-    @user = users(:admin)
+    @user = FactoryBot.create(:admin)
     assert Pundit.policy(@user, @pet_category).admin?
   end
 
   test "destroy as admin" do
     refute Pundit.policy(@user, @pet_category).admin?
-    @user = users(:admin)
+    @user = FactoryBot.create(:admin)
     assert Pundit.policy(@user, @pet_category).destroy?
   end
 end

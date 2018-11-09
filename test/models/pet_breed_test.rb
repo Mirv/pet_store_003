@@ -2,7 +2,7 @@ require 'test_helper'
 
 class PetBreedTest < ActiveSupport::TestCase
   setup do
-    @breeds = pet_breeds(:one)
+    @breeds = FactoryBot.create(:pet_breed)
   end
   
   test "invalid without name" do
