@@ -1,22 +1,22 @@
-%h1 Listing pets
+%h2 Listing pets
 
-%table
+%table.table.table-hover
   %thead
     %tr
-      %th Name
-      %th Description
-      %th Age
-      %th Pet breed
-      %th Location
-      %th Status
-      %th
-      %th
-      %th
+      %th{:scope => "col"} Name
+      %th{:scope => "col"} Description
+      %th{:scope => "col"} Age
+      %th{:scope => "col"} Pet breed
+      %th{:scope => "col"} Location
+      %th{:scope => "col"} Status
+      %th{:scope => "col"} 
+      %th{:scope => "col"} 
+      %th{:scope => "col"} 
 
   %tbody
     - if @pets.count > 0
       - @pets.each do |pet|
-        %tr
+        %tr.table-primary
           %td= pet.name
           %td= pet.description
           %td= pet.age

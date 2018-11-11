@@ -1,17 +1,17 @@
 %h1 Listing Pet Categories
 
-%table
+%table.table.table-hover
   %thead
     %tr
-      %th Name
-      %th Description
-      %th
-      %th
-      %th
+      %th{:scope => "col"} Name
+      %th{:scope => "col"} Description
+      %th{:scope => "col"} 
+      %th{:scope => "col"} 
+      %th{:scope => "col"} 
 
   %tbody
     - @pet_categories.each do |pet_category|
-      %tr
+      %tr.table-primary
         %td= pet_category.name
         %td= pet_category.description
         %td= link_to 'Show', pet_category

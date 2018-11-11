@@ -1,18 +1,18 @@
 %h1 Listing Pet Breeds
 
-%table
+%table.table.table-hover
   %thead
     %tr
-      %th Name
-      %th Description
-      %th Pet category
-      %th
-      %th
-      %th
+      %th{:scope => "col"} Name
+      %th{:scope => "col"} Description
+      %th{:scope => "col"} Pet category
+      %th{:scope => "col"} 
+      %th{:scope => "col"} 
+      %th{:scope => "col"} 
 
   %tbody
     - @pet_breeds.each do |pet_breed|
-      %tr
+      %tr.table-primary
         %td= pet_breed.name
         %td= pet_breed.description
         %td= pet_breed.pet_category.name

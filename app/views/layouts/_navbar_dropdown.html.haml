@@ -1,0 +1,20 @@
+%li.dropdown
+  %a.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+    User Navigation
+    %span.caret
+  %ul.dropdown-menu{:role => "menu"}
+    %li
+      - if user_signed_in? 
+        Blah
+      - else
+        = link_to 'Register', new_user_registration_path
+    %li
+      - if user_signed_in? 
+        = link_to "Logout", destroy_user_session_path, method: :delete
+      - else
+        = link_to "Login", '/users/sign_in'
+    %li.divider
+    %li
+      Blah
+    %li
+      Blah

@@ -1,20 +1,20 @@
 %h1 Listing locations
 
-%table
+%table.table.table-hover
   %thead
     %tr
-      %th Name
-      %th Xcoord
-      %th Ycoord
-      %th Owner
-      %th Status
-      %th
-      %th
-      %th
+      %th{:scope => "col"} Name
+      %th{:scope => "col"} Xcoord
+      %th{:scope => "col"} Ycoord
+      %th{:scope => "col"} Owner
+      %th{:scope => "col"} Status
+      %th{:scope => "col"} 
+      %th{:scope => "col"} 
+      %th{:scope => "col"} 
 
   %tbody
     - @locations.each do |location|
-      %tr
+      %tr.table-primary
         %td= location.name
         %td= location.xcoord
         %td= location.ycoord
