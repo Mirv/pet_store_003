@@ -1,5 +1,5 @@
 class Location < ApplicationRecord
-  belongs_to  :user
+  belongs_to  :user, touch: true
   has_many    :pets
   enum status: {closed: 0, open: 1, shutdown: 2, shutdown_temporarily: 3}, _prefix: :store
   
