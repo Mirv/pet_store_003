@@ -15,7 +15,6 @@
 
   %tbody
     - if @pets.count > 0
-      // = render partial: 'pets/pet_list', collection: @pets, cached: true
       - @pets.each do |pet|
         - cache(pet) do
           %tr.table-primary
