@@ -1,11 +1,6 @@
 - if user_signed_in? && !current_user.anonymous?
   %li.sidebar-nav-item
-    #{logged_in_email(current_user)}
-    \-
     = link_to 'Log Out', destroy_user_session_path, method: :delete
 - else
   %li.sidebar-nav-item
     %a.js-scroll-trigger{:href => new_user_session_path} Log In
-    \-
-    %a.js-scroll-trigger{:href => new_user_registration_path} Sign up
-

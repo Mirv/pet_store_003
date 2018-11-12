@@ -14,7 +14,9 @@
 
   %tbody
     - @locations.each do |location|
+      // %tr.table-secondary
       %tr.table-primary
+        %th{:scope => "row"} Primary
         %td= location.name
         %td= location.xcoord
         %td= location.ycoord
