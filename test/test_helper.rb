@@ -12,6 +12,4 @@ class ActiveSupport::TestCase
   include Devise::Test::IntegrationHelpers
   include FactoryBot::Syntax::Methods
   include ApplicationHelper
-
-  
 end

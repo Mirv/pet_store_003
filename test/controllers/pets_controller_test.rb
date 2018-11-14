@@ -60,4 +60,5 @@ class PetsControllerTest < ActionDispatch::IntegrationTest
 
     assert_redirected_to pets_url
   end
+
 end

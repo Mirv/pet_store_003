@@ -1,7 +1,5 @@
 require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  # Rest in devise's tests until an issue appears
 end

@@ -79,8 +79,19 @@ class PetTest < ActiveSupport::TestCase
     assert ordering.include?(fulfilling_processing)
   end
   
-  # test "" do
-  #   @sold = @user.pets.create(attributes_for(:pet, status: :sold))
-  #   @zero = @user.pets.create(attributes_for(:pet, status: :zero))
+  # test "sold do not show on general page" do
+    @sold = @user.pets.create(attributes_for(:pet, status: :sold))
+    
+    # TODO - ensure cache key isn't there, then ensure it is there
+    
+    # let(:file_cache) { ActiveSupport::Cache.lookup_store(:file_store, file_caching_path) }
+    # let(:cache) { Rails.cache }
+    # #respec
+    # allow(Rails).to receive(:cache).and_return(file_cache)
+    # Rails.cache.clear
+     
+    # expect(cache.exist?('some_key')).to be(false)
+    # cache.write('some_key', 'test')
+    # expect(cache.exist?('some_key')).to be(true)
   # end
 end
