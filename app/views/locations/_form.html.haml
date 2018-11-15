@@ -7,7 +7,7 @@
     = f.input :name
     = f.input :xcoord
     = f.input :ycoord
-    = f.label "Pet Status"
-    = f.select :status, Pet.statuses.keys.map { |w| [w.humanize, w] }
+    = f.label "Location Status"
+    = f.select :status, Location.statuses.keys.map { |w| [w.humanize, w] }
   .form-actions
     = f.button :submit

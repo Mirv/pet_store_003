@@ -5,6 +5,7 @@ ruby '2.5.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '5.2'
 gem 'sassc'
+gem 'sassc-rails'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails'
 # See https://github.com/rails/execjs#readme for more supported runtimes
@@ -26,6 +27,12 @@ gem 'pg'
 
 gem 'simple_form'
 
+gem 'haml'
+gem 'haml-rails'
+gem 'factory_bot'
+gem 'factory_bot_rails'
+gem 'ffaker'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
@@ -34,14 +41,11 @@ gem 'simple_form'
 
 group :development, :test do
   gem 'byebug'
-  gem 'haml'
-  gem 'haml-rails'
   gem "minitest", "5.10.3"
   gem 'guard' # NOTE: this is necessary in newer versions
   gem 'guard-minitest'
-  gem 'factory_bot'
-  gem 'factory_bot_rails'
-  gem 'ffaker'
+
+
 end
 
 group :development do
@@ -52,3 +56,4 @@ group :development do
   # gem 'spring'
 end
 
+ruby '2.5.1'
