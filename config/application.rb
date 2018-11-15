@@ -25,5 +25,6 @@ module Workspace
     # config.active_record.raise_in_transactional_callbacks = true
     # config.active_record.raise_in_transactional_callbacks = false
     Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+    config.assets.initialize_on_precompile = false
   end
 end
