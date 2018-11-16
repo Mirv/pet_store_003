@@ -1,6 +1,7 @@
 %h1 Listing Pet Breeds
-
+%button.btn.btn-primary{:href => :new_pet_breed_path} New Pet breed
 %table.table.table-hover
+
   %thead
     %tr
       %th{:scope => "col"} Name
@@ -27,4 +28,3 @@
 
 %br
 
-= link_to 'New Pet breed', new_pet_breed_path
