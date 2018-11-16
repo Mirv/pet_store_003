@@ -19,17 +19,17 @@ FactoryBot.define do
   end
   
   factory :pet do
-    name { FFaker::AnimalUS.common_name }
-    description { "MyString" }
+    name { FFaker::Book.title }
+    description { FFaker::BaconIpsum.word }
     status { Pet.statuses.values.sample }
-    age {9.99}
+    age {rand(10)}
     location 
     pet_breed
     user
   end
   
   factory :location do
-    name    { FFaker::Internet.email } # FFaker::Address.city }
+    name    { FFaker::AddressUS.city } 
     xcoord  {1}
     ycoord  {1}
     user
@@ -38,7 +38,7 @@ FactoryBot.define do
   
   factory :pet_breed do
     name { FFaker::Food.fruit }
-    description {"MyString"}
+    description { FFaker::BaconIpsum.word }
     association :pet_category 
   end
   
