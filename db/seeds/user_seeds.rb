@@ -31,12 +31,10 @@ def findDefaultUserEmail(number_defaults = 1, first_half_email = "a", email_doma
   ### Note:  Extract this to check function & use it to replace later in process so new a, b default code doesn't fight old replacment
   email = first_half_email + "@" + email_domain
   if User.find_by(email: email)
-    puts "MDU -- incrementing past ##{first_half_email} w/#{email}-- user already exists"
     until !User.find_by(email: email)
       first_half_email = first_half_email.next 
       email = first_half_email + "@" + email_domain
     end
-    puts "MDU -- email - post check:  #{email}"
   end
   return email
   

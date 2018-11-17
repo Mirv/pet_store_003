@@ -79,7 +79,7 @@ class PetTest < ActiveSupport::TestCase
     assert ordering.include?(fulfilling_processing)
   end
   
-  # test "sold do not show on general page" do
+  test "sold do not show on general page" do
     @sold = @user.pets.create(attributes_for(:pet, status: :sold))
     
     # TODO - ensure cache key isn't there, then ensure it is there
@@ -93,5 +93,5 @@ class PetTest < ActiveSupport::TestCase
     # expect(cache.exist?('some_key')).to be(false)
     # cache.write('some_key', 'test')
     # expect(cache.exist?('some_key')).to be(true)
-  # end
+  end
 end
