@@ -1,24 +1,16 @@
+My-Pet-Store aka the Pet Listing
 
-     ,-----.,--.                  ,--. ,---.   ,--.,------.  ,------.
-    '  .--./|  | ,---. ,--.,--. ,-|  || o   \  |  ||  .-.  \ |  .---'
-    |  |    |  || .-. ||  ||  |' .-. |`..'  |  |  ||  |  \  :|  `--, 
-    '  '--'\|  |' '-' ''  ''  '\ `-' | .'  /   |  ||  '--'  /|  `---.
-     `-----'`--' `---'  `----'  `---'  `--'    `--'`-------' `------'
-    ----------------------------------------------------------------- 
+- Git clone the repo 
+- Run `bundle install`
+- Install Postgresql or db of choice
+- Set env variables 
+  - `IP` - for db IP address 
+  - `dev_pet_user` - for dev user in db
+  - `dev_pet_pass` - for dev password in db
+  - `prod_pet_user` - for production user in db
+  - `MYAPP_DATABASE_PASSWORD` - for production password in db
+  - `SECRET_KEY_BASE` - as needed
+- Run `rails db:schema:load`
+- Run `rails db:seed`
 
-
-Welcome to your Rails project on Cloud9 IDE!
-
-To get started, just do the following:
-
-1. Run the project with the "Run Project" button in the menu bar on top of the IDE.
-2. Preview your new app by clicking on the URL that appears in the Run panel below (https://HOSTNAME/).
-
-Happy coding!
-The Cloud9 IDE team
-
-
-## Support & Documentation
-
-Visit http://docs.c9.io for support, or to learn more about using Cloud9 IDE. 
-To watch some training videos, visit http://www.youtube.com/user/c9ide
+Wiki splash page - https://github.com/Mirv/pet_store_003/wiki
