@@ -1,5 +1,7 @@
 %h1 Listing Pet Categories
-%button.btn.btn-primary{:href => :new_pet_category_path} New Pet category
+
+%button.btn.btn-primary
+  = link_to "New Pet Category", new_pet_category_path
 
 %table.table.table-hover
   %thead

@@ -1,5 +1,9 @@
 %h1 Listing Pet Breeds
-%button.btn.btn-primary{:href => :new_pet_breed_path} New Pet breed
+
+%button.btn.btn-primary
+  = link_to "New Pet Breed", new_pet_breed_path
+
+
 %table.table.table-hover
 
   %thead

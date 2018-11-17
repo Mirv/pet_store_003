@@ -1,6 +1,7 @@
 %h1 Listing locations
 
-%button.btn.btn-primary{:href => :new_location_path} New Location
+%button.btn.btn-primary
+  = link_to "New Location", new_location_path
 
 %table.table.table-hover
   %thead
