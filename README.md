@@ -1,4 +1,4 @@
-#My-Pet-Store aka the Pet Listing
+# My-Pet-Store aka the Pet Listing
 
 - Git clone the repo 
 - Run `bundle install`
