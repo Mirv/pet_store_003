@@ -1,6 +1,21 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 
+# Executable for the seeding - can set number of runs via count
+def run_process(count = 15)
+  # grab counts of target tables
+  counters = set_counters
+
+  # load files necessary
+  load_all_seeds
+
+  # run the seeding 
+  execute_seeds(count)
+  
+  # diplays old next to AR db call of actual count post seeding
+  puts "Database counts"
+  post_count(counters)
+end
 
 # load our seeds files
 def load_all_seeds
@@ -27,21 +42,6 @@ def post_count(counters)
       puts "#{key} -- Before:  #{value},  After:  #{key.constantize.count}"
     end
   end
-end
-
-def run_process
-  # grab counts of target tables
-  counters = set_counters
-
-  # load files necessary
-  load_all_seeds
-
-  # run the seeding 
-  execute_seeds
-  
-  # diplays old next to AR db call of actual count post seeding
-  puts "Database counts"
-  post_count(counters)
 end
 
 def execute_seeds(count = 15)
