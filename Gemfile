@@ -37,6 +37,8 @@ gem 'ffaker'
 # gem 'unicorn'
 gem 'puma'
 
+gem 'react-rails'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

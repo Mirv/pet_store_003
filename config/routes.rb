@@ -3,6 +3,12 @@ Rails.application.routes.draw do
   resources :locations
   resources :pet_breeds
   resources :pet_categories
+  namespace :api do 
+    namespace :v1 do 
+     resources :users, only: [:index]
+     root 'users#index'
+    end 
+  end 
   devise_for :users
   root 'pets#index'
   # /assets/ico/favicon.ico
