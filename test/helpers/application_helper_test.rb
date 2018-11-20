@@ -6,7 +6,7 @@ class ApplicationHelperTest < ActiveSupport::TestCase
   test "logged in email shows" do
     @user = FactoryBot.build(:user, email: 'a@test.com')
     sign_in @user
-    assert_match 'User: a@test.com', logged_in_email(@user)
+    assert_match 'a@test.com', logged_in_email(@user)
   end
 
 end
