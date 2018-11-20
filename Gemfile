@@ -31,7 +31,7 @@ gem 'haml'
 gem 'haml-rails'
 gem 'factory_bot'
 gem 'factory_bot_rails'
-gem 'ffaker'
+gem 'faker'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
