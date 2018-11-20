@@ -16,11 +16,7 @@ class Body extends React.Component {
   render(){
       return(
         <div>
-          <table class="table table-hover">
-            <tbody>
-              <AllPets pets={this.state.pets} />
-            </tbody>
-          </table>
+          <AllPets pets={this.state.pets} />
         </div>
       )
     }
