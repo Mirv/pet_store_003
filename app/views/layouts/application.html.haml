@@ -23,6 +23,8 @@
     .container
       = render 'layouts/navbar'
     .container
+      = react_component 'Main'
+    .container
       = render 'layouts/flash_messages' if flash.present?
     .container.body
       = yield 

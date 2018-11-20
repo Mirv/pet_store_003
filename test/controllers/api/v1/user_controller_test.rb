@@ -24,6 +24,7 @@ class LocationsControllerTest < ActionDispatch::IntegrationTest
     
     # drop all the values into a quick search format
     results = json_response.map{|x| x.values}.flatten
+    
     assert_includes results, user.email
   end
 end

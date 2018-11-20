@@ -47,8 +47,6 @@ group :development, :test do
   gem "minitest", "5.10.3"
   gem 'guard' # NOTE: this is necessary in newer versions
   gem 'guard-minitest'
-
-
 end
 
 group :development do
