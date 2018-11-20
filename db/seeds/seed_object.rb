@@ -1,4 +1,5 @@
 require 'ffaker'
+require 'faker'
 require 'factory_bot'
 
 class SeedObject

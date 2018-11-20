@@ -1,9 +1,9 @@
-require 'ffaker'
+require 'faker'
 
 # This will guess the User class
 FactoryBot.define do
   factory :user do
-    email               { FFaker::Internet.email }
+    email               { Faker::Internet.email }
     encrypted_password  { "ssssss" }
     password            { "ssssss" }
     admin               { false }
@@ -12,15 +12,15 @@ FactoryBot.define do
   # TODO - implement a trait here
   # This will use the User class (Admin would have been guessed)
   factory :admin, class: User do
-    email               { FFaker::Internet.email }
+    email               { Faker::Internet.email }
     encrypted_password  {"ssssss"}
     password            {"ssssss"}
     admin               {true}
   end
   
   factory :pet do
-    name { FFaker::Book.title }
-    description { FFaker::BaconIpsum.word }
+    name { Faker::Cat.name }
+    description { Faker::HowIMetYourMother }
     status { Pet.statuses.values.sample }
     age {rand(10)}
     location 
@@ -29,7 +29,7 @@ FactoryBot.define do
   end
   
   factory :location do
-    name    { FFaker::AddressUS.city } 
+    name    { Faker::Address.city } 
     xcoord  {1}
     ycoord  {1}
     user
@@ -37,13 +37,13 @@ FactoryBot.define do
   end
   
   factory :pet_breed do
-    name { FFaker::Food.fruit }
-    description { FFaker::BaconIpsum.word }
+    name { Faker::Cat.breed }
+    description { Faker::HowIMetYourMother }
     association :pet_category 
   end
   
   factory :pet_category do
-    name { FFaker::Food.fruit }
+    name { Faker::Lorem.word }
     description {"MyString"}
   end
 end
