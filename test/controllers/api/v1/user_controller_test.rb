@@ -10,7 +10,7 @@ class LocationsControllerTest < ActionDispatch::IntegrationTest
   end
   
   test "root should suceed" do
-    get '/'
+    get '/api/v1/'
     assert_response :success
   end
   
